@@ -1,0 +1,49 @@
+.serch{
+    height: .5rem;
+    border-bottom: 1px solid #cccccc;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.serchiner{
+    width: 90%;
+    height: .3rem;
+    border-radius: .15rem;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    padding-left: .05rem;
+}
+.serchiner input{
+    border: 0;
+    height: 100%;
+    margin-left: .1rem;
+    width: 2.5rem;
+    background-color: #ccc;
+}
+.remensuo{
+    height: .5rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: .1rem;
+}
+.libox{
+    display: flex;
+    flex-wrap: wrap;
+    padding: .1rem;
+}
+.libox li{
+    padding: .08rem;
+    border: 1px solid #ccc;
+    border-radius: .3rem;
+    margin: .04rem;
+}
+.licontent li{
+    height: .4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .1rem;
+    border-bottom: 1px solid #ccc;
+}

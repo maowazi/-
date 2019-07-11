@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {HashRouter as HRouter,Route,Switch,Redirect} from "react-router-dom";
+import store from "./store/store";
+import {Provider} from "react-redux";
 
+import {viewRouter} from "./router/router";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Provider store={store}>
+        <HRouter>
+            <Switch>
+                        {
+                            viewRouter.map((item,index)=>(
+                                <Route path={item.pathName} component={item.component} key={index}/>
+                            ))
+                        }
+                        <Redirect from="/" to="/home"/>
+            </Switch>
+
+        </HRouter>
+        </Provider>
+      </div>
   );
 }
 

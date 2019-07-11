@@ -1,0 +1,111 @@
+body{
+    height: 100%;
+}
+.content{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+}
+.contentinner{
+    z-index: 1;
+    position: relative;
+    height: 100%;
+}
+.content:after{
+    content: "";
+    width:100%;
+    height:100%;
+    position: absolute;
+    left:0;
+    top:0;
+    background: inherit;
+    filter: blur(20px);
+    z-index: 0;
+}
+.imgbox{
+    display: flex;
+    height: .4rem;
+    align-items: center;
+    margin-left: .1rem;
+}
+.imgbox img{ 
+    width: .2rem;
+    height: .2rem;
+    margin-right:.05rem; 
+}
+.imgbox p{
+    color: #fff;
+    margin-bottom: 0;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .3rem;
+    position: relative;
+}
+.box1{
+    height: 2.5rem;
+    width: 2.5rem;
+    background: url(//s3.music.126.net/mobile-new/img/disc.png?d3bdd1080a72129346aa0b4b4964b75f=) no-repeat center center;
+    background-size: 100% 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name:gg;
+    animation-duration:15s;
+    animation-timing-function:linear;/*匀速*/
+    animation-iteration-count:infinite;/*无限循环*/
+    animation-play-state:paused; /*停止*/
+    /* animation: gg 15s linear infinite; */
+}
+.box2{
+    height: 1.492rem;
+    width: 1.492rem;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.box i{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    font-size: .5rem;
+    color:rgba(255, 255, 255, 0.6);
+}
+.jindutiao{
+    width: 80%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: .3rem;
+}
+.jindutiaoinner{
+    display: flex;
+    align-items: center;
+}
+.jindutiaoinner span{
+    color: #fff;
+}
+.jindutiaobox{
+    width: 100%;
+}
+@keyframes gg{
+    0%{
+        transform: rotateZ(0deg)
+    }
+    100%{
+        transform: rotateZ(360deg)
+    }
+}

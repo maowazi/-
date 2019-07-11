@@ -1,0 +1,47 @@
+.tuijian{
+    height: .5rem;
+    line-height: .5rem;
+    padding-left: .1rem;
+}
+.tuijianlist{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: .5rem;
+}
+.imgwarp{
+    width: 1rem;
+    margin-bottom: .03rem;
+}
+.imgbox img{
+    width: 100%;
+}
+.imgwarp p{
+    /* width: 100%; */
+    display:-webkit-box;
+    -webkit-line-clamp: 2;
+    /* -webkit-box-orient: vertical; */
+    overflow: hidden;
+}
+.zuixinyinyue{
+    height: .5rem;
+    line-height: .5rem;
+    padding-left: .1rem;
+}
+.gedanlist{
+    height: .5rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .1rem;
+}
+.gedanlist div:first-child span:first-child{
+    font-size: .18rem;
+    
+}
+.namelist{
+    display: flex;
+    flex-direction: column;
+}
+
