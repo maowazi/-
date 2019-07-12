@@ -145,7 +145,9 @@ class Order extends React.Component{
 
     }
     componentDidMount(){
-        let id = this.props.id?this.props.id:(this.props.location.query.id?this.props.location.query.id:window.sessionStorage.getItem("id"));
+        // console.log(this.props.location.query);
+        let id = this.props.id?this.props.id:this.props.location.query?this.props.location.query.id:window.sessionStorage.getItem("id");
+        window.sessionStorage.setItem("id",id)
         fetchPolyfill('http://47.100.53.108:8081/song/detail?ids='+id)   //获取图片
             .then((res) => res.json())
             .then((data) => {
