@@ -20,12 +20,14 @@ class Tuijian extends React.Component {
                 <div className='tuijianlist'>
                     {
                         datalist.map((item, index) => (
-                            <div className='imgwarp' key={index}>
+                            <Link key={index} to={{pathname:"/tuijianxiangqing",query:{id:item.id}}}>
+                            <div className='imgwarp'>
                                 <div className='imgbox'>
                                     <img src={item.picUrl} alt='图片'/>
                                 </div>
                                 <p>{item.name}</p>
                             </div>
+                            </Link>
                         ))
                     }
                 </div>

@@ -1,4 +1,4 @@
-import {Home,HomeTuijian,HomeRege,HomeResou,Order} from "../components/views/views";
+import {Home,HomeTuijian,HomeRege,HomeResou,Order,TuijinaXiangqing} from "../components/views/views";
 
 const viewRouter = [
     {
@@ -8,6 +8,10 @@ const viewRouter = [
     {
         pathName:"/order",
         component:Order
+    },
+    {
+        pathName:"/tuijianxiangqing",
+        component:TuijinaXiangqing
     }
 ]
 const Homeview = [

@@ -21,11 +21,16 @@ const Order = Loadable({
     loader:()=>import("../order/order"),
     loading:Loading
 })
+const TuijinaXiangqing = Loadable({
+    loader:()=>import("../tuijianxiangqing/tuijianxianqing"),
+    loading:Loading
+})
 
 export {
     Home,
     HomeTuijian,
     HomeRege,
     HomeResou,
-    Order
+    Order,
+    TuijinaXiangqing
 }

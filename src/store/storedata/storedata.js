@@ -9,6 +9,8 @@ export default (state=defaultState,action)=>{
         case idupdata:
             newstate.id=action.val;
             return newstate;
+        default:
+            break;
     }
     return state
 }

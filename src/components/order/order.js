@@ -19,12 +19,15 @@ class Order extends React.Component{
             strUpdataTimer:'',
             timer:0,
             zongmiao:0,
-            disabled:false
+            disabled:false,
+            inputValue: 10,
+            volume:10,
+            visibility:'hidden'
 
         }
     }
     render(){
-        let {url,flag,sum,src,strTimerM,strUpdataTimer,timer,disabled} = this.state;
+        let {url,flag,sum,src,strTimerM,strUpdataTimer,timer,disabled,volume,visibility} = this.state;
         
         return(
             <div className='content' style={{background:`url(${url}) no-repeat center center`}}>
@@ -39,6 +42,18 @@ class Order extends React.Component{
                     </div>
                     <audio ref='audo' onDurationChange={this.handtimer.bind(this)} onTimeUpdate = {this.handtimerM.bind(this)} onPlaying={this.handUpdataJindu.bind(this)} onEnded={this.handend.bind(this)} controls src={src} hidden loop id='audo' timeupdate="updateTime"></audio>
                     <div className='jindutiao' style={{display:`${sum}`}}>
+                        <Slider
+                            min={0}
+                            max={10}
+                            onChange={this.onChangeYinliang.bind(this)}
+                            value={volume}
+                            disabled={disabled}
+                            vertical
+                            className="Yinliang"
+                            style={{visibility:`${visibility}`}}
+                        />
+                        <i className='iconfont icon-xiaolaba' onClick={this.handYinyliang.bind(this)}></i>
+
                         <Progress
                             strokeColor={{
                                 '0%': '#108ee9',
@@ -100,15 +115,37 @@ class Order extends React.Component{
         let zongmiao = this.state.zongmiao;
         let kuaijinmiao = parseInt(e/100);
         let num = e/100*zongmiao;
-        audo.currentTime = num
+        audo.currentTime = num;
         this.setState({
-            // zongmiao:kuaijinmiao,
             timer:kuaijinmiao
         })
         
+        
+    }
+    onChangeYinliang(e){
+        let audo = this.refs.audo;
+        audo.volume = e/10;
+        this.setState({
+            volume:e
+        })
+    }
+    startt = true
+    handYinyliang(){
+        if(this.startt){
+            this.setState({
+                visibility:"inherit"
+            })
+            this.startt = false;
+        }else{
+            this.setState({
+                visibility:"hidden"
+            })
+            this.startt = true;
+        }
+
     }
     componentDidMount(){
-        let id = this.props.id;
+        let id = this.props.id?this.props.id:(this.props.location.query.id?this.props.location.query.id:window.sessionStorage.getItem("id"));
         fetchPolyfill('http://47.100.53.108:8081/song/detail?ids='+id)   //获取图片
             .then((res) => res.json())
             .then((data) => {
@@ -168,8 +205,8 @@ class Order extends React.Component{
             audo.pause();
             this.flag=false;
             this.setState({
-                flag:"block",
-                sum:"none",
+                // flag:"block",
+                // sum:"none",
                 timer:0
             })
     }

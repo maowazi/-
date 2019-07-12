@@ -42,7 +42,7 @@ class Resou extends React.Component{
                         {
                             muzclist.map((item,index)=>(
                                 <Link to='/order' key={index}>
-                                <li  onClick={this.handid.bind(this,item.id)} onClick={this.props.handid.bind(this,item.id)}>
+                                <li  onClick={this.handid.bind(this,item.id)}>
                                     <div>
                                         <span>{item.name}</span>
                                         <div>{item.artists[0].name}</div>

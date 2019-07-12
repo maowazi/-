@@ -1,0 +1,113 @@
+.banner{
+    height: 2rem;
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.banner:after{
+    content: "";
+    width:100%;
+    height:2rem;
+    position: absolute;
+    left:0;
+    top:0;
+    background: inherit;
+    filter: blur(10px);
+    z-index: 1;
+}
+.banner_left{
+    height: 1.5rem;
+    width: 1.5rem;
+    z-index: 2;
+}
+.banner_left img{
+    width: 100%;
+    height: 100%;
+}
+.banner_right{
+    height: 1.5rem;
+    width: 1.5rem;
+    z-index: 2;
+}
+.banner_right img{
+    width: .3rem;
+    height: .3rem;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: .1rem;
+}
+.banner_right h3{
+    height: 1rem;
+    font-size: .18rem;
+    color: #fff;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.banner_right span{
+    color: #fff;
+}
+.xiangqing{
+    background: rgba(148, 145, 145, 0.1);
+    padding: .15rem;
+}
+.xiangqing div{
+    margin: .1rem 0;
+}
+.xiangqing_box1 span{
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: .1rem;
+    text-align: center;
+    padding: 0 .05rem;
+    margin: 0 .05rem;
+}
+.I_box{
+    text-align: end;
+}
+.shenglue{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.shenglue2{
+    width: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.geqvliabiao{
+    background: rgba(148, 145, 145, 0.3);
+    height: .2rem;
+    line-height: .2rem;
+    padding-left: .1rem;
+}
+.listcontent{
+    background: rgba(148, 145, 145, 0.1);
+    padding: 0 0 0 .1rem;
+}
+.lidtinner{
+    height: .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.listinner_left{
+    height: 100%;
+    width: .5rem;
+    line-height: .5rem;
+    text-align: center;
+}
+.listinner_right{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    flex: 1;
+    box-sizing: border-box;
+    padding-right: .1rem;
+}

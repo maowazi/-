@@ -101,6 +101,12 @@ body{
 .jindutiaobox{
     width: 100%;
 }
+.Yinliang{
+    height: 1rem;
+}
+.icon-xiaolaba{
+    color: #fff;
+}
 @keyframes gg{
     0%{
         transform: rotateZ(0deg)
