@@ -146,9 +146,9 @@ class Order extends React.Component{
     }
     componentDidMount(){
         // console.log(this.props.location.query);
-        let id = this.props.id?this.props.id:this.props.location.query?this.props.location.query.id:window.sessionStorage.getItem("id");
-        window.sessionStorage.setItem("id",id)
-        fetchPolyfill('http://47.100.53.108:8081/song/detail?ids='+id)   //获取图片
+        let ids = this.props.id?this.props.id:this.props.location.query?this.props.location.query.id:window.sessionStorage.getItem("ids");
+        window.sessionStorage.setItem("ids",ids)
+        fetchPolyfill('http://47.100.53.108:8081/song/detail?ids='+ids)   //获取图片
             .then((res) => res.json())
             .then((data) => {
                 
@@ -158,7 +158,7 @@ class Order extends React.Component{
                 })
                 window.sessionStorage.setItem("urls",urls)
             })
-        fetchPolyfill('http://47.100.53.108:8081/music/url?id='+id)  //获取音乐地址
+        fetchPolyfill('http://47.100.53.108:8081/music/url?id='+ids)  //获取音乐地址
         .then((res) => res.json())
         .then((data) => {
             let url = data.data.length > 0 ? data.data[0].url : window.sessionStorage.getItem("url");
